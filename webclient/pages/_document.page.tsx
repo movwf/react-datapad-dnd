@@ -7,6 +7,7 @@ export default function Document() {
       <body className="dark:bg-slate-700 bg-background">
         <Main />
         <NextScript />
+        <div id="portal-node" />
       </body>
     </Html>
   );

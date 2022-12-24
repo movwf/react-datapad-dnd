@@ -24,12 +24,12 @@ module.exports = {
         width: "width",
       },
       fontFamily: {
-        "sans": ["SF Pro Rounded", defaultTheme.fontFamily.sans],
+        sans: ["SF Pro Rounded", defaultTheme.fontFamily.sans],
       },
       colors: {
-        "background": "#F8F8F8",
-        "transparent": "transparent",
-        "primary": "#142782",
+        background: "#F8F8F8",
+        transparent: "transparent",
+        primary: "#142782",
         "black-1": "rgba(0,0,0,0.015)",
         "black-10": "rgba(0,0,0,0.1)",
         "krasnyi-red": {
@@ -98,7 +98,7 @@ module.exports = {
           800: "#086A49",
           900: "#055843",
         },
-        "teal": {
+        teal: {
           100: "#CAFAE4",
           200: "#97F5D2",
           300: "#5FE2BE",
@@ -209,6 +209,16 @@ module.exports = {
         "80vh": "80vh",
         "90vh": "90vh",
         "100vh": "100vh",
+      },
+      keyframes: {
+        curtain: {
+          "0%": { width: "0%" },
+          "50%": { width: "50%" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        curtain: "curtain 1s ease-in-out",
       },
     },
   },

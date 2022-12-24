@@ -6,4 +6,20 @@
   .datapad-button {
     @apply text-white bg-vegan-green-600 hover:bg-vegan-green-500 rounded-md shadow font-semibold;
   }
+
+  .datapad-button-default {
+    @apply text-violet-600 bg-white hover:bg-[#f8f8f8] border-gray-500 rounded-md shadow font-semibold dark:text-white dark:bg-vegan-green-500;
+  }
+
+  .scrollable-area {
+    height: full;
+    width: full;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding-right: 5px;
+  }
+
+  .scrollable-area::-webkit-scrollbar {
+    display: none;
+  }
 }
