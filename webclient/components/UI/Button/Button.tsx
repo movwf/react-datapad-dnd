@@ -1,5 +1,4 @@
-import { ChevronRightIcon } from "@heroicons/react/solid";
-import { ImageProps } from "next/image";
+import classNames from "@core/react/class-names";
 import React, { MouseEventHandler } from "react";
 
 type ButtonProps = {
@@ -10,6 +9,7 @@ type ButtonProps = {
   spinnerClassName?: string | undefined;
   loading?: boolean;
   buttonImage?: React.ReactNode;
+  iconPosition?: "left" | "right";
 };
 
 const Button = ({
@@ -19,12 +19,16 @@ const Button = ({
   className,
   spinnerClassName,
   loading,
-  buttonImage
+  buttonImage,
+  iconPosition = "right",
 }: ButtonProps) => {
   return (
     <button
       type={type ?? "button"}
-      className={`inline-flex items-center drop-shadow-sm px-4 py-2 leading-6 text-md transition ease-in-out duration-150 cursor-pointer ${className}`}
+      className={classNames([
+        `inline-flex items-center drop-shadow-sm px-4 py-2 leading-6 text-md transition ease-in-out duration-150 cursor-pointer ${className}`,
+        iconPosition === "left" && "flex-row-reverse",
+      ])}
       onClick={onClick}
     >
       {loading && (
@@ -51,12 +55,15 @@ const Button = ({
       )}
       {title}
       {buttonImage && (
-        <span className="ml-2 flex align-center">
+        <span
+          className={classNames([
+            "flex align-center",
+            iconPosition === "left" ? "mr-2" : "ml-2",
+          ])}
+        >
           {buttonImage}
         </span>
-        
       )}
-      
     </button>
   );
 };
